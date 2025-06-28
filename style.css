@@ -1,0 +1,104 @@
+body {
+  background-color: #000c1f;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  color: #00fff7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#jarvis-container {
+  background: rgba(0, 255, 247, 0.05);
+  border: 2px solid #00fff7;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 600px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px #00fff7, 0 0 60px #00fff7;
+}
+
+h1 {
+  font-size: 40px;
+  color: #00fff7;
+  text-shadow: 0 0 15px #00fff7;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#listening-indicator {
+  display: none;
+  align-self: center;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mic-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00fff7;
+  animation: pulse 1.5s infinite;
+}
+
+.listening-text {
+  color: #00fff7;
+  font-size: 16px;
+  animation: fadeIn 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+#chat-history {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.message {
+  background: rgba(0, 255, 247, 0.05);
+  border: 1px solid #00fff7;
+  border-radius: 10px;
+  padding: 10px;
+  color: #ffffff;
+  animation: fadeIn 0.3s ease-in-out;
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+
+.message.user {
+  align-self: flex-start;
+  color: #00ffcc;
+}
+
+.message.bot {
+  align-self: flex-end;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00fff7;
+  border-radius: 3px;
+}
